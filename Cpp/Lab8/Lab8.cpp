@@ -2,13 +2,14 @@
 
 #include <iostream>
 
-const int width = 4;
-const int height = 6;
+const int width = 6;
+const int height = 4;
 
 void fillMatrix(int[height][width]);
 void findMaxInColumn(int[height][width], int[]);
 void sortArray(int[]);
 void printArray(int[]);
+void printMatrix(int[height][width]);
 
 int main() {
     int matrix[height][width];
@@ -16,6 +17,7 @@ int main() {
     fillMatrix(matrix);
     findMaxInColumn(matrix, arr);
     sortArray(arr);
+    printMatrix(matrix);
     printArray(arr);
 }
 
@@ -41,7 +43,7 @@ void findMaxInColumn(int matrix[height][width], int arr[]) {
 void sortArray(int arr[]) {
     for (int k = 1; k < width; k++) {
         int j = k;
-        while (arr[k] < arr[k - 1] && k > 0) {
+        while (arr[k] > arr[k - 1] && k > 0) {
             int tmp = arr[k];
             arr[k] = arr[k - 1];
             arr[k - 1] = tmp;
@@ -54,6 +56,16 @@ void sortArray(int arr[]) {
 void printArray(int arr[]) {
     for (int i = 0; i < width; i++) {
         std::cout << arr[i] << " ";
+    }
+    std::cout << "\n";
+}
+
+void printMatrix(int matrix[height][width]) {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            printf("%3i", matrix[i][j]);
+        }
+        std::cout << "\n";
     }
     std::cout << "\n";
 }
