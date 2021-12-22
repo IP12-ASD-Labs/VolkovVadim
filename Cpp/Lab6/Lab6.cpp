@@ -3,6 +3,15 @@
 #include <iostream>
 #include <windows.h>
 
+double geomProgSum(double);
+
+int main() {
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+    double result = geomProgSum(50.0);
+    std::cout << "Результат: " << result << "\n";
+}
+
 double geomProgSum(double n) {
     double returnVal;
     if (n > 1) {
@@ -11,10 +20,4 @@ double geomProgSum(double n) {
         returnVal = 1.0;
     }
     return returnVal;
-}
-int main() {
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-    double result = geomProgSum(50.0);
-    std::cout << "Результат: " << result << "\n";
 }
